@@ -1,0 +1,48 @@
+services:
+  prometheus:
+    image: prom/prometheus:v2.53.1
+    container_name: paninang-prometheus
+    command: --web.enable-lifecycle --config.file=/etc/prometheus/prometheus.yml
+    ports:
+      - 9090:9090
+    volumes:
+    - ./:/etc/prometheus
+    - prometheus-data:/prometheus
+    networks:
+      - paninang-netology-hw
+    restart: always
+  pushgateway:
+    image: prom/pushgateway:v1.6.2
+    container_name: paninang-pushgateway
+    ports:
+      - 9091:9091
+    networks:
+      - paninang-netology-hw
+    depends_on:
+      - prometheus
+    restart: unless-stopped
+  grafana:
+    image: grafana/grafana
+    container_name: paninang-grafana
+    environment:
+      GF_PATHS_CONFIG: /etc/grafana/custom.ini
+    ports:
+      - 80:3000
+    volumes:
+      - ./:/etc/grafana
+      - grafana-data:/var/lib/grafana
+    networks:
+      - paninang-netology-hw
+    depends_on:
+      - pushgateway
+    restart: unless-stopped
+volumes:
+  prometheus-data:
+  grafana-data:
+networks:
+  paninang-netology-hw:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.5.0.0/16
+          gateway: 10.5.0.1
