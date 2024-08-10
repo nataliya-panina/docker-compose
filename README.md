@@ -78,7 +78,19 @@ docker compose up -d
 - Обеспечьте внешний доступ к порту 9091 c докер-сервера.  
 ## Решение 4
 nano compose.yml
-
+```
+services:
+  pushgateway:
+    image: prom/pushgateway:v1.6.2
+    container_name: paninang-pushgateway
+    ports:
+      - 9091:9091
+    networks:
+      - paninang-netology-hw
+    depends_on:
+      - prometheus
+    restart: unless-stopped
+```
 
 
 
@@ -104,7 +116,7 @@ grafana:
 	networks:
   	  - paninang-netology-hw
 	depends_on:
-  	  - prometheus
+  	  - pushgateway
 	restart: unless-stopped
 volumes:
   grafana-data:
