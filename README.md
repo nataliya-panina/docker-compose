@@ -163,7 +163,6 @@ echo "paninang 5" | curl --data-binary @- http://localhost:9091/metrics/job/neto
 ![compose.yml](https://github.com/nataliya-panina/docker-compose/blob/main/compose.yml)
 
 
-
 ## Задание 8
 Выполните действия:
 Остановите и удалите все контейнеры одной командой.
