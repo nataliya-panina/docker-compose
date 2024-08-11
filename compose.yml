@@ -22,6 +22,20 @@ services:
     depends_on:
       - prometheus
     restart: unless-stopped
+  alertmanager:
+    image: prom/alertmanager:v0.26.0
+    container_name: paninang-alertmanager
+    command: --config.file=/etc/alertmanager/alertmanager.yml
+    ports:
+      - 9093:9093
+    volumes:
+      - ./:/etc/alertmanager
+      - alertmanager-data:/data
+    networks:
+      - paninang-netology-hw
+    depends_on:
+      - prometheus
+    restart: always
   grafana:
     image: grafana/grafana
     container_name: paninang-grafana
@@ -40,6 +54,7 @@ services:
 volumes:
   prometheus-data:
   grafana-data:
+  alertmanager-data:
 networks:
   paninang-netology-hw:
     driver: bridge
