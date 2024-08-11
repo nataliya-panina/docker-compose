@@ -176,6 +176,7 @@ docker run -d --net=”host” --name node_exporter -v “./:/host:ro,rslave” 
 echo "paninang 5" | curl --data-binary @- http://localhost:9091/metrics/job/netology
 ```
 ![compose.yml](https://github.com/nataliya-panina/docker-compose/blob/main/compose.yml)
+![docker ps](https://github.com/nataliya-panina/docker-compose/blob/main/img/docker-ps.png)
 ![grafana](https://github.com/nataliya-panina/docker-compose/blob/main/img/my_metric.png)
 
 ## Задание 8
