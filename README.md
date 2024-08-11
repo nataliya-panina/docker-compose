@@ -177,7 +177,7 @@ docker run -d --net=”host” --name node_exporter -v “./:/host:ro,rslave” 
 echo "paninang 5" | curl --data-binary @- http://localhost:9091/metrics/job/netology
 ```
 ![compose.yml](https://github.com/nataliya-panina/docker-compose/blob/main/compose.yml)
-
+![grafana](https://github.com/nataliya-panina/docker-compose/blob/main/img/my_metric.png)
 
 ## Задание 8
 Выполните действия:  
@@ -188,7 +188,7 @@ echo "paninang 5" | curl --data-binary @- http://localhost:9091/metrics/job/neto
 docker rm -f $(docker ps -aq)
 ```
 ![Docker rm](https://github.com/nataliya-panina/docker-compose/blob/main/img/docker-rm.png)
-![docker ps](https://github.com/nataliya-panina/docker-compose/blob/main/img/docker-ps.png)
+
 ## Задание 9*
 Выполните действия:  
 - Создайте конфигурацию docker-compose для Alertmanager с именем контейнера <ваши фамилия и инициалы>-netology-alertmanager.  
@@ -198,7 +198,7 @@ docker rm -f $(docker ps -aq)
 В качестве решения приложите скриншот с событием из Alertmanager.  
 ## Решение 9
 ![Alertmanager](https://github.com/nataliya-panina/docker-compose/blob/main/alertmanager.yml)
-![Alert](https://github.com/nataliya-panina/docker-compose/blob/main/img/instance down.png)
+![Alert](https://github.com/nataliya-panina/docker-compose/blob/main/img/instance-down.png)
 
 ## Задание 10*
 Запустите свой сценарий на чистом железе без предзагруженных образов.  
