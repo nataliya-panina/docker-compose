@@ -92,8 +92,7 @@ services:
       - prometheus
     restart: unless-stopped
 ```
-
-
+![pushgateway](https://github.com/nataliya-panina/docker-compose/blob/main/img/pushgateway-v1.png)
 
 ## Задание 5
 Выполните действия:  
@@ -160,8 +159,7 @@ paninang-netology-hw
 ```
 docker run -d --net=”host” --name node_exporter -v “./:/host:ro,rslave”  \ quay.io/prometheus/node-exporter:latest --path.rootfs=/host
 ```
-
-
+![docker compose up -d](https://github.com/nataliya-panina/docker-compose/blob/main/img/sequence.png)
 
 ## Задание 7
 Выполните действия.  
@@ -212,3 +210,4 @@ docker image rm -f $(docker image ls)
 ```
 ![Загрузка образов](https://github.com/nataliya-panina/docker-compose/blob/main/img/pull_images.png)
 ![Загрузка контейнеров](https://github.com/nataliya-panina/docker-compose/blob/main/img/pull-2.png)
+![Script](https://github.com/nataliya-panina/docker-compose/blob/main/script.sh)
