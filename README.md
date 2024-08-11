@@ -211,4 +211,3 @@ docker image rm -f $(docker image ls)
 ```
 ![Загрузка образов](https://github.com/nataliya-panina/docker-compose/blob/main/img/pull_images.png)
 ![Загрузка контейнеров](https://github.com/nataliya-panina/docker-compose/blob/main/img/pull-2.png)
-![Script](https://github.com/nataliya-panina/docker-compose/blob/main/script.sh)
