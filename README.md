@@ -70,7 +70,7 @@ networks:
 ```
 docker compose up -d
 ```
-![]()
+![prometheus](https://github.com/nataliya-panina/docker-compose/blob/main/img/prometheusv1.png)
 
 ## Задание 4
 Выполните действия:  
@@ -131,7 +131,7 @@ admin_password=netology
 ```
 docker compose up -d
 ```
-
+![grafana](https://github.com/nataliya-panina/docker-compose/blob/main/img/grafana-v1.png)
 
 ## Задание 6
 Выполните действия.  
@@ -187,8 +187,8 @@ echo "paninang 5" | curl --data-binary @- http://localhost:9091/metrics/job/neto
 ```
 docker rm -f $(docker ps -aq)
 ```
-![]()
-
+![Docker rm](https://github.com/nataliya-panina/docker-compose/blob/main/img/docker-rm.png)
+![docker ps](https://github.com/nataliya-panina/docker-compose/blob/main/img/docker-ps.png)
 ## Задание 9*
 Выполните действия:  
 - Создайте конфигурацию docker-compose для Alertmanager с именем контейнера <ваши фамилия и инициалы>-netology-alertmanager.  
@@ -197,7 +197,8 @@ docker rm -f $(docker ps -aq)
 - Обеспечьте внешний доступ к порту 9093 c докер-сервера.  
 В качестве решения приложите скриншот с событием из Alertmanager.  
 ## Решение 9
-
+![Alertmanager](https://github.com/nataliya-panina/docker-compose/blob/main/alertmanager.yml)
+![Alert](https://github.com/nataliya-panina/docker-compose/blob/main/img/instance down.png)
 
 ## Задание 10*
 Запустите свой сценарий на чистом железе без предзагруженных образов.  
@@ -205,3 +206,8 @@ docker rm -f $(docker ps -aq)
 Опишите выполненный вами процесс развертывания сценария.  
 Как вы думаете зачем может понадобиться такой способ развертывания?  
 ## Решение 10
+```
+docker image rm -f $(docker image ls)
+```
+![Загрузка образов](https://github.com/nataliya-panina/docker-compose/blob/main/img/pull_images.png)
+![Загрузка контейнеров](https://github.com/nataliya-panina/docker-compose/blob/main/img/pull-2.png)
