@@ -70,6 +70,7 @@ networks:
 ```
 docker compose up -d
 ```
+![](https://github.com/nataliya-panina/docker-compose/blob/main/img/compose.v1.png)
 ![prometheus](https://github.com/nataliya-panina/docker-compose/blob/main/img/prometheusv1.png)
 
 ## Задание 4
